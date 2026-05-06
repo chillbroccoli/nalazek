@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nalazek</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="root">
+      <nav>
+        <div class="logo">NAL<span>A</span>ZEK</div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#o-nas">O Nas</a>
+            <a href="#usługi">Usługi</a>
+            <a href="#dlaczego-my">Dlaczego My</a>
+            <a href="#kontakt">Kontakt</a>
+          </div>
+          <div class="theme-switcher">
+            <button
+              class="theme-btn active"
+              id="btn-dark"
+              onclick="setTheme('dark')"
+            >
+              <svg
+                class="theme-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+            <button
+              class="theme-btn"
+              id="btn-light"
+              onclick="setTheme('light')"
+            >
+              <svg
+                class="theme-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            </button>
+          </div>
+          <button
+            class="nav-hamburger"
+            id="nav-hamburger"
+            onclick="toggleMobileMenu()"
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="hamburger-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <svg
+              class="close-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div
+        class="mobile-nav"
+        id="mobile-nav"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        <a href="#o-nas" onclick="closeMobileMenu()">O Nas</a>
+        <a href="#usługi" onclick="closeMobileMenu()">Usługi</a>
+        <a href="#dlaczego-my" onclick="closeMobileMenu()">Dlaczego My</a>
+        <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+      </div>
+
+      <section class="hero">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1800&q=80&auto=format&fit=crop"
+          alt="Hala produkcyjna"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div>
+            <div class="hero-tag">Polska firma przemysłowa</div>
+            <h1>
+              BUDUJEMY<span class="line-orange">MAGAZYNUJEMY</span
+              ><span class="line-faint">DOSTARCZAMY</span>
+            </h1>
+            <p class="hero-sub">
+              Nalazek to wielosektorowy partner działający w obszarach produkcji
+              przemysłowej, budownictwa, handlu hurtowego, logistyki i
+              zarządzania nieruchomościami.
+            </p>
+            <div class="hero-actions">
+              <a href="#usługi" class="btn-primary"
+                >Nasze usługi
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" /></svg
+              ></a>
+              <a href="#kontakt" class="btn-ghost">Skontaktuj się →</a>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-num">6</div>
+              <div class="stat-label">Sektorów działalności</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">20+</div>
+              <div class="stat-label">Lat doświadczenia</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">360°</div>
+              <div class="stat-label">Pełna realizacja projektów</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-strip">
+        <div class="divider-item">Produkcja przemysłowa</div>
+        <div class="divider-item">Budownictwo</div>
+        <div class="divider-item">Handel hurtowy</div>
+        <div class="divider-item">Logistyka</div>
+        <div class="divider-item">Nieruchomości</div>
+        <div class="divider-item">Wynajem pojazdów</div>
+      </div>
+
+      <section class="about" id="o-nas">
+        <div>
+          <div class="section-eyebrow">O firmie</div>
+          <h2>Zaufany partner <em>w każdej</em> branży</h2>
+          <p>
+            Nalazek to polska firma z wieloletnim doświadczeniem operacyjnym na
+            rynkach przemysłowych i komercyjnych. Od produkcji stalowych
+            konstrukcji, przez zarządzanie nieruchomościami, po handel hurtowy —
+            obsługujemy pełen zakres działalności.
+          </p>
+          <p>
+            Nasz zespół łączy głęboką wiedzę sektorową pod jednym dachem,
+            zapewniając klientom jednego, niezawodnego partnera do realizacji
+            złożonych projektów wielodziedzinowych.
+          </p>
+        </div>
+        <div class="about-visual">
+          <div class="about-visual-inner">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2399.7058983719403!2d18.631053800000004!3d53.025649699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470334c10ba93129%3A0x664324c844e5cc5b!2sNalazek%20Dariusz%20Nalazek!5e0!3m2!1sen!2spl!4v1777974168725!5m2!1sen!2spl"
+              width="100%"
+              height="450px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="about-visual-label">
+            <p>Nalazek Dariusz Nalazek</p>
+            <span>Bolesława Chrobrego 12C, 87-100 Toruń</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="usługi">
+        <div class="services-header">
+          <div>
+            <div class="section-eyebrow">Zakres działalności</div>
+            <h2>Co <em>robimy</em></h2>
+          </div>
+          <p>
+            Szeroki portfel usług stworzony dla klientów przemysłowych i
+            komercyjnych poszukujących jednego partnera
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-num">01</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6" />
+              </svg>
+            </div>
+            <h3>Produkcja przemysłowa</h3>
+            <p>
+              Wytwarzanie stalowych konstrukcji, elementów metalowych oraz
+              architektonicznej stolarki budowlanej.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">02</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="15" rx="1" />
+                <path
+                  d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v4M8 12v4"
+                />
+              </svg>
+            </div>
+            <h3>Budownictwo</h3>
+            <p>
+              Roboty budowlane przy wznoszeniu budynków mieszkalnych i
+              niemieszkalnych oraz rozbiórka obiektów.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">03</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"
+                />
+              </svg>
+            </div>
+            <h3>Handel hurtowy</h3>
+            <p>
+              Dystrybucja drewna, materiałów budowlanych, wyposażenia
+              sanitarnego i towarów różnego rodzaju.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">04</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="1" y="3" width="15" height="13" />
+                <path
+                  d="M16 8h4l3 3v5h-7V8zM5.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                />
+              </svg>
+            </div>
+            <h3>Magazynowanie i logistyka</h3>
+            <p>
+              Magazynowanie i przechowywanie towarów oraz przeładunek w
+              dedykowanych punktach logistycznych.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">05</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <h3>Zarządzanie nieruchomościami</h3>
+            <p>
+              Wynajem i zarządzanie nieruchomościami własnymi lub dzierżawionymi
+              na potrzeby komercyjne.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">06</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="1" y="3" width="15" height="13" />
+                <path d="M16 8h4l3 3v5h-7V8z" />
+                <circle cx="5.5" cy="18.5" r="1.5" />
+                <circle cx="18.5" cy="18.5" r="1.5" />
+              </svg>
+            </div>
+            <h3>Wynajem pojazdów</h3>
+            <p>
+              Krótko i długoterminowy wynajem samochodów osobowych, furgonetek
+              oraz pojazdów dostawczych.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery">
+        <div class="gallery-header">
+          <div class="section-eyebrow">Nasze realizacje</div>
+          <h2 class="section-title">Z czego jesteśmy <em>dumni</em></h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item tall">
+            <img
+              src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop"
+              alt="Stalowe konstrukcje"
+            />
+            <div class="gallery-label">Konstrukcje stalowe</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1591588582259-e675bd2e6088?w=600&q=80&auto=format&fit=crop"
+              alt="Budowa"
+            />
+            <div class="gallery-label">Roboty budowlane</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80&auto=format&fit=crop"
+              alt="Magazyn"
+            />
+            <div class="gallery-label">Logistyka i magazyny</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop"
+              alt="Budownictwo komercyjne"
+            />
+            <div class="gallery-label">Budownictwo komercyjne</div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop"
+              alt="Spawalnictwo"
+            />
+            <div class="gallery-label">Produkcja metalowa</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why" id="dlaczego-my">
+        <div class="why-inner">
+          <div class="section-eyebrow">Dlaczego Nalazek</div>
+          <h2>Dlaczego firmy nam ufają</h2>
+          <div class="why-grid">
+            <div class="why-item">
+              <div class="why-item-num">01</div>
+              <h3>Zasięg multisektorowy</h3>
+              <p>
+                Jedna firma pokrywająca produkcję, logistykę, handel i
+                budownictwo. Bez zbędnych pośredników.
+              </p>
+            </div>
+            <div class="why-item">
+              <div class="why-item-num">02</div>
+              <h3>Niezawodna realizacja</h3>
+              <p>
+                Dotrzymujemy terminów i bierzemy pełną odpowiedzialność za każdy
+                etap projektu.
+              </p>
+            </div>
+            <div class="why-item">
+              <div class="why-item-num">03</div>
+              <h3>Doświadczony zespół</h3>
+              <p>
+                Dekady praktycznej wiedzy we wszystkich sektorach działalności.
+                Znamy każdą branżę od środka.
+              </p>
+            </div>
+            <div class="why-item">
+              <div class="why-item-num">04</div>
+              <h3>Elastyczne partnerstwo</h3>
+              <p>
+                Dostosowujemy się do skali projektu — od jednorazowych zleceń po
+                długoterminową współpracę.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="kontakt">
+        <div class="contact-header">
+          <div class="section-eyebrow">Kontakt</div>
+          <h2>Skontaktuj się <em>z nami</em></h2>
+          <p>
+            Czy potrzebujesz wyceny, stałego dostawcy, czy masz pytania —
+            jesteśmy do Twojej dyspozycji. Skontaktuj się z nami w wygodny dla
+            Ciebie sposób.
+          </p>
+        </div>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"
+                />
+              </svg>
+            </div>
+            <h3>Telefon</h3>
+            <p class="contact-card-value">+48 000 000 000</p>
+            <p class="contact-card-note">Pon – Pt, 7:00 – 16:00</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <h3>Email</h3>
+            <p class="contact-card-value">nalazek@nalazek.pl</p>
+            <p class="contact-card-note">Odpowiadamy w ciągu 24h</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Adres</h3>
+            <p class="contact-card-value">Bolesława Chrobrego 12C</p>
+            <p class="contact-card-note">87-100 Toruń, Polska</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3>Godziny pracy</h3>
+            <p class="contact-card-value">Pon – Pt: 7:00 – 16:00</p>
+            <p class="contact-card-note">Sob – Ndz: Nieczynne</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-top">
+          <div>
+            <div class="footer-logo">NAL<span>A</span>ZEK</div>
+            <p class="footer-tagline">
+              Wielosektorowy partner dla przemysłu i budownictwa. Jeden kontakt
+              — pełna realizacja.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Nawigacja</h4>
+            <a href="#o-nas">O nas</a><a href="#usługi">Usługi</a
+            ><a href="#dlaczego-my">Dlaczego my</a
+            ><a href="#kontakt">Kontakt</a>
+          </div>
+          <div class="footer-col">
+            <h4>Kontakt</h4>
+            <a href="tel:+48000000000">+48 000 000 000</a
+            ><a href="mailto:nalazek@nalazek.pl">nalazek@nalazek.pl</a
+            ><a href="#">Bolesława Chrobrego 12C, 87-100 Toruń</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p></p>
+          <div class="footer-badge">PL · EU · ISO</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
