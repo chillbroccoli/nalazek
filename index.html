@@ -3,11 +3,128 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nalazek</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-      rel="stylesheet"
+
+    <!-- Primary SEO -->
+    <title>Nalazek – Wielosektorowy Partner Przemysłowy | Toruń</title>
+    <meta
+      name="description"
+      content="Nalazek Dariusz Nalazek – polska firma z Torunia z ponad 20-letnim doświadczeniem. Produkcja stalowych konstrukcji, budownictwo, handel hurtowy materiałami budowlanymi, logistyka, zarządzanie nieruchomościami i wynajem pojazdów."
     />
+    <meta
+      name="keywords"
+      content="Nalazek, konstrukcje metalowe Toruń, produkcja stalowa, budownictwo Toruń, handel hurtowy materiały budowlane, logistyka magazynowanie Toruń, zarządzanie nieruchomościami, wynajem pojazdów, firma przemysłowa Toruń, NIP 9560018276"
+    />
+    <meta name="author" content="Nalazek Dariusz Nalazek" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f05a1a" />
+    <link rel="canonical" href="https://nalazek.pl/" />
+
+    <!-- Geo -->
+    <meta name="geo.region" content="PL-KP" />
+    <meta name="geo.placename" content="Toruń" />
+    <meta name="geo.position" content="53.025650;18.631054" />
+    <meta name="ICBM" content="53.025650, 18.631054" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Nalazek" />
+    <meta
+      property="og:title"
+      content="Nalazek – Wielosektorowy Partner Przemysłowy | Toruń"
+    />
+    <meta
+      property="og:description"
+      content="Polska firma z ponad 20-letnim doświadczeniem. Produkcja stalowych konstrukcji, budownictwo, handel hurtowy materiałami budowlanymi, logistyka i zarządzanie nieruchomościami. Toruń, Polska."
+    />
+    <meta property="og:url" content="https://nalazek.pl/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Nalazek – Wielosektorowy Partner Przemysłowy | Toruń"
+    />
+    <meta
+      name="twitter:description"
+      content="Polska firma z ponad 20-letnim doświadczeniem. Produkcja stalowych konstrukcji, budownictwo, handel hurtowy, logistyka i zarządzanie nieruchomościami."
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Nalazek Dariusz Nalazek",
+        "legalName": "NALAZEK Dariusz Nalazek",
+        "url": "https://nalazek.pl",
+        "email": "nalazek@nalazek.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bolesława Chrobrego 12C",
+          "postalCode": "87-100",
+          "addressLocality": "Toruń",
+          "addressCountry": "PL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.02565,
+          "longitude": 18.631054
+        },
+        "taxID": "9560018276",
+        "foundingDate": "2004-06-01",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "16:00"
+        },
+        "description": "Wielosektorowy partner przemysłowy działający w obszarach produkcji konstrukcji metalowych, budownictwa, handlu hurtowego materiałami budowlanymi, logistyki, zarządzania nieruchomościami i wynajmu pojazdów.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Usługi",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Produkcja konstrukcji metalowych i stalowych"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": { "@type": "Service", "name": "Roboty budowlane" }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Handel hurtowy materiałami budowlanymi"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Magazynowanie i logistyka"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Wynajem i zarządzanie nieruchomościami"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": { "@type": "Service", "name": "Wynajem pojazdów" }
+            }
+          ]
+        }
+      }
+    </script>
+
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -22,11 +139,12 @@
             <a href="#dlaczego-my">Dlaczego My</a>
             <a href="#kontakt">Kontakt</a>
           </div>
-          <div class="theme-switcher">
+          <div class="theme-switcher" role="group" aria-label="Wybór motywu">
             <button
               class="theme-btn active"
               id="btn-dark"
-              onclick="setTheme('dark')"
+              aria-label="Ciemny motyw"
+              aria-pressed="false"
             >
               <svg
                 class="theme-icon"
@@ -41,7 +159,8 @@
             <button
               class="theme-btn"
               id="btn-light"
-              onclick="setTheme('light')"
+              aria-label="Jasny motyw"
+              aria-pressed="false"
             >
               <svg
                 class="theme-icon"
@@ -165,6 +284,54 @@
         <div class="divider-item">Nieruchomości</div>
         <div class="divider-item">Wynajem pojazdów</div>
       </div>
+
+      <section
+        class="process-video-section"
+        aria-labelledby="process-video-title"
+        data-video-section
+      >
+        <div class="process-video-media" aria-hidden="true">
+          <img
+            class="process-video-poster"
+            src="videos/process-poster.jpg"
+            alt=""
+            loading="lazy"
+          />
+          <video
+            class="process-video"
+            id="process-video"
+            muted
+            playsinline
+            autoplay
+            preload="none"
+            poster="videos/process-poster.jpg"
+            data-video-sources="videos/worker-1-bg.mp4,videos/worker-2-bg.mp4,videos/worker-3-bg.mp4"
+          ></video>
+          <div class="process-video-overlay"></div>
+        </div>
+        <div class="process-video-content">
+          <div class="section-eyebrow">Praca w ruchu</div>
+          <h2 id="process-video-title">Proces, który <em>nie zwalnia</em></h2>
+          <p>
+            Od przygotowania materiału po logistykę na placu. Każdy etap ma
+            swoje tempo, ale całość działa jako jeden uporządkowany ciąg pracy.
+          </p>
+          <div class="process-video-facts" aria-label="Etapy pracy">
+            <div class="process-video-fact">
+              <span>01</span>
+              <strong>Produkcja</strong>
+            </div>
+            <div class="process-video-fact">
+              <span>02</span>
+              <strong>Magazyn</strong>
+            </div>
+            <div class="process-video-fact">
+              <span>03</span>
+              <strong>Dostawa</strong>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="about" id="o-nas">
         <div>
