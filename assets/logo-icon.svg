@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" role="img" aria-label="Nalazek">
+  <title>Nalazek</title>
+  <!-- Brand blue background -->
+  <rect width="60" height="60" fill="#1C3080"/>
+  <!-- N letterform in brand amber -->
+  <rect x="9" y="8" width="10" height="44" fill="#F7A600"/>
+  <polygon points="9,8 19,8 51,52 41,52" fill="#F7A600"/>
+  <rect x="41" y="8" width="10" height="44" fill="#F7A600"/>
+  <!-- Horizontal stripe cuts – decorative brand detail -->
+  <rect x="9" y="19" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="9" y="30" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="9" y="41" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+</svg>

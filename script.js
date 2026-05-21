@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
   footerBottom.textContent = `© ${currentYear} Nalazek. Wszelkie prawa zastrzeżone.`;
 
   initProcessVideo();
+  initContactForm();
 });
 
 function getInitialTheme() {
@@ -127,6 +128,97 @@ function shouldUseProcessVideoFallback(video) {
   const canPlayMp4 = video.canPlayType("video/mp4");
 
   return canPlayMp4 === "";
+}
+
+function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const submitBtn = document.getElementById("form-submit-btn");
+  const successBanner = document.getElementById("form-banner-success");
+  const errorBanner = document.getElementById("form-banner-error");
+
+  const validatedFields = [
+    { el: document.getElementById("cf-name"), group: document.getElementById("fg-name"), type: "text" },
+    { el: document.getElementById("cf-email"), group: document.getElementById("fg-email"), type: "email" },
+    { el: document.getElementById("cf-message"), group: document.getElementById("fg-message"), type: "text" },
+  ];
+
+  validatedFields.forEach(({ el, group, type }) => {
+    if (!el) return;
+
+    el.addEventListener("input", () => {
+      if (group.classList.contains("has-error")) {
+        group.classList.toggle("has-error", !isFieldValid(el, type));
+      }
+    });
+
+    el.addEventListener("blur", () => {
+      if (el.value.trim() !== "" || el.required) {
+        group.classList.toggle("has-error", !isFieldValid(el, type));
+      }
+    });
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    let allValid = true;
+    validatedFields.forEach(({ el, group, type }) => {
+      const valid = isFieldValid(el, type);
+      group.classList.toggle("has-error", !valid);
+      if (!valid) allValid = false;
+    });
+
+    if (!allValid) {
+      const firstError = form.querySelector(".form-group.has-error input, .form-group.has-error textarea");
+      firstError?.focus();
+      return;
+    }
+
+    errorBanner.hidden = true;
+    setFormLoading(true);
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      const json = await res.json();
+
+      if (!res.ok || !json.success) {
+        throw new Error(json.message || "Submission failed");
+      }
+
+      showFormSuccess();
+    } catch {
+      setFormLoading(false);
+      errorBanner.hidden = false;
+    }
+  });
+
+  function isFieldValid(el, type) {
+    const val = el.value.trim();
+    if (el.required && val === "") return false;
+    if (type === "email" && val !== "") {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    }
+    return true;
+  }
+
+  function setFormLoading(loading) {
+    submitBtn.disabled = loading;
+    submitBtn.classList.toggle("is-loading", loading);
+  }
+
+  function showFormSuccess() {
+    form.querySelectorAll(".form-row, .form-group, .form-actions").forEach((el) => {
+      el.hidden = true;
+    });
+    successBanner.hidden = false;
+  }
 }
 
 function startProcessVideoLoop(section, video) {

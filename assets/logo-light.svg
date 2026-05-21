@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nalazek wordmark – for light/white backgrounds (navy text, muted blue tagline) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 62" role="img" aria-label="Nalazek – Bramy, Drzwi, Rolety">
+  <title>Nalazek – Bramy, Drzwi, Rolety</title>
+  <!-- N mark box: 60×60 (blue box always works on light bg) -->
+  <rect x="0" y="1" width="60" height="60" fill="#1C3080"/>
+  <!-- N letterform in brand amber -->
+  <rect x="9" y="9" width="10" height="42" fill="#F7A600"/>
+  <polygon points="9,9 19,9 51,51 41,51" fill="#F7A600"/>
+  <rect x="41" y="9" width="10" height="42" fill="#F7A600"/>
+  <!-- Horizontal stripe cuts -->
+  <rect x="9" y="19" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="9" y="30" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+  <rect x="9" y="41" width="42" height="3" fill="#ffffff" fill-opacity="0.28"/>
+  <!-- NALAZEK wordmark in brand navy -->
+  <text x="74" y="38" font-family="'Bebas Neue', Impact, 'Arial Black', sans-serif" font-size="31" letter-spacing="3" fill="#1C3080">NALAZEK<tspan font-size="15" dy="-11" dx="1">®</tspan></text>
+  <!-- Tagline in muted navy -->
+  <text x="74" y="53" font-family="'DM Sans', Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2" fill="rgba(28,48,128,0.6)">Bramy  •  Drzwi  •  Rolety</text>
+</svg>
