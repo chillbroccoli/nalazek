@@ -70,7 +70,7 @@ function shouldUseProcessVideoFallback(video) {
     navigator.connection ||
     navigator.mozConnection ||
     navigator.webkitConnection;
-
+  
   if (connection) {
     const effectiveType = connection.effectiveType || "";
     const slowConnection =
